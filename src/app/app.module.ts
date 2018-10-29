@@ -15,8 +15,13 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCardModule,
+  MatListModule,
+  MatDividerModule
 } from '@angular/material';
+import { RequestsComponent } from './requests/requests.component';
+import { SharingComponent } from './sharing/sharing.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,9 @@ import {
     SidebarComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RequestsComponent,
+    SharingComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,10 @@ import {
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [AuthGuard, UserService],
   bootstrap: [AppComponent]

@@ -12,13 +12,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   userId : string;
-  userData : any;
-  documents: any[];
-  selectedDocument: any;
-  expanded : boolean = false;
-  orgAccessSelectionList: any[];
-  accessInput = false;
-  selectedOrg: string;
+  user = {
+    'id':1234,
+    'name': 'dravid',
+    'email': 'thewall@gmail.com',
+    'adress': 'Bengaluru'
+  }
 
   orgList = ['HDFC','SBI','ICICI','AXIS'];
   
@@ -30,8 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.documents = [];
-    //this.userId = 'USER0';
+
     this.userId = localStorage.getItem('user');
     //this.getUserData();
   }

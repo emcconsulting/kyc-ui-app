@@ -7,77 +7,108 @@
 
 <div class="col-md-12 col-md-offset-2" *ngIf="!expanded">
 
-  <div class="col col-xs-12 text-right">
+  <!-- <div class="col col-xs-12 text-right">
     <button type="button" class="btn btn-primary btn-create" (click)="openUploadFileDialogue()">+ File</button>
-  </div>
-  
-        <div class="panel-body" *ngIf="documents.length != 0">
-            <table class="table table-striped table-bordered table-list" width="100%">
-                <thead>
-                    <tr>
-                        <th>file name</th>
-                        <th>document type</th>
-                        <th>No of entities having access</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let document of documents">
-                        <td><a (click)="viewDocumentSharedStatus(document)" [routerLink]="">{{document.Key}}</a></td>
-                        <td>{{document.documentType}}</td>
-                        <td>{{document.orgsToAccess.length}}</td>
-                </tbody>
-            </table>
-
-        </div>
+  </div> -->
 
 </div>
 
-<div class="panel-body" *ngIf="expanded">
-    <div class="col col-xs-6">
-            <h3 class="panel-title" style="color: chocolate">{{selectedDocument.Key}}</h3>
-    </div>
-    <div class="col col-xs-12 text-right">
-            <!-- <button type="button" class="btn btn-primary btn-success" (click)="openUploadFileDialogue()">access</button> -->
+<mat-card class="basic-details-card">
+    <mat-card-header>
+        <mat-card-title style="color: green">Basic Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="row">
 
-            <div>
-                <button *ngIf="!accessInput" type="button" class="btn btn-primary btn-success" (click)="accessInput = !accessInput">+ access</button>
-                <div *ngIf="accessInput">
-                    
-                    <mat-form-field>
-                        <mat-select placeholder="Select Bank" [(ngModel)]="selectedOrg">
-                          <mat-option *ngFor="let org of orgAccessSelectionList" value={{org}}>
-                            {{org}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-
-                    <button type="button" class="btn btn-primary btn-danger" (click)="provideAccess()">proceed</button>
-                    <button type="button" class="btn btn-primary btn-primary" (click)="accessInput = !accessInput">cancel</button>
-                </div>
-                <button *ngIf="!accessInput" type="button" class="btn btn-primary btn-success" (click)="back()">back</button>
+            <div class="col-md-4">
+                <p>{{user.id}}</p> 
             </div>
-    </div>
-
-
         
-    <div class="panel-body" *ngIf="selectedDocument">
-            <table class="table table-striped table-bordered table-list" width="100%">
-                    <thead>
-                        <tr>
-                            <th>organization</th>
-                            <th>verified</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let entity of selectedDocument.orgsToAccess">
-                            <td>{{entity.org}}</td>
-                            <td>{{entity.isVerified}}</td>
-                    </tbody>
-        </table>
-    </div>
+          <div class="col-md-5">
+                <p>{{user.name}}</p> 
+          </div>
 
+          <div class="col-md-3">
+              <p>{{user.email}}</p> 
+          </div>
+       
+      </div> 
+
+      <div class="row">
+          <div class="col-md-3">
+              <p>{{user.adress}}</p> 
+          </div>
+      </div>
+
+    </mat-card-content>
+</mat-card>
+
+<div class="row">
+<p></p>
 </div>
 
+<div class="row">
+    <div class="col-md-6">
+      <mat-card>
+          <mat-card-header>
+          <mat-card-title style="color: green">Aaadhar Details</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+
+            <div class="col-md-6">
+                <!-- <div class="row">
+
+                </div>
+                <div class="row">
+                    
+                </div>
+                <div class="row">
+                    
+                </div> -->
+
+            
+            <p>adhar no</p> 
+              
+            <p>issue date</p> 
+           
+            <p>status</p> 
+            
+            </div>
+
+            <div class="col-md-6">
+
+            </div>
+
+          </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-md-6">
+      <mat-card>
+          <mat-card-header>
+          <mat-card-title style="color:green">Passport Details</mat-card-title>
+        </mat-card-header>
+
+          <mat-card-content>
+            
+            <div class="col-md-6">
+                <p>passport no</p> 
+                
+                <p>expiry date</p> 
+
+                <p>issue date</p> 
+               
+                <p>status</p> 
+            </div>
+            <div class="col-md-6">
+
+            </div>
+
+          </mat-card-content>
+      </mat-card>  
+    </div>
+</div>
 
 </main>
 
