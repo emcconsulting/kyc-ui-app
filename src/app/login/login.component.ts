@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
   banks: Array<string> = ['HDFC','SBI','ICICI','AXIS'];
-  rbi : string = 'RBI';
+  admin : string = 'RBI';
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -19,10 +19,16 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.model.username + ' ' + this.model.password);
     localStorage.setItem('user',this.model.username);
+
+    if(this.model.username === this.admin){
+      this.router.navigate(['admin']);
+      return;
+    }
+
     if(this.banks.indexOf(this.model.username) === -1){
       this.router.navigate(['home']);
     }else{
-      this.router.navigate(['bank']);
+      this.router.navigate(['seeker']);
     }
   }
 

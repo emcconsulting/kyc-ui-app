@@ -22,6 +22,13 @@ import {
 } from '@angular/material';
 import { RequestsComponent } from './requests/requests.component';
 import { SharingComponent } from './sharing/sharing.component';
+import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { SeekerSidebarComponent } from './seeker-sidebar/seeker-sidebar.component';
+import { RequestViewComponent } from './request-view/request-view.component';
+import { SeekerHomeComponent } from './seeker-home/seeker-home.component';
+import { SeekerRequestDetailsComponent } from './seeker-request-details/seeker-request-details.component';
+import { SeekerKycRequestsComponent } from './seeker-kyc-requests/seeker-kyc-requests.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,15 @@ import { SharingComponent } from './sharing/sharing.component';
     LoginComponent,
     HomeComponent,
     RequestsComponent,
-    SharingComponent
+    SharingComponent,
+    AdminSidebarComponent,
+    AdminHomeComponent,
+    SeekerSidebarComponent,
+    RequestViewComponent,
+    RequestViewComponent,
+    SeekerHomeComponent,
+    SeekerRequestDetailsComponent,
+    SeekerKycRequestsComponent
   ],
   imports: [
     BrowserModule,

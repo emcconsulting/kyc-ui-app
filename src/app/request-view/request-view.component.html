@@ -1,0 +1,50 @@
+<div class="adhar" *ngIf="request.idType == AADHAR">
+<mat-card>
+  <mat-card-header>
+  <mat-card-title style="color: green">Aaadhar Details</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <div class="col-md-6">
+    
+    <p>adhar no</p> 
+      
+    <p>issue date</p> 
+   
+    <p>status</p> 
+    
+    </div>
+
+    <div class="col-md-6">
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+</div>
+
+<div class="passport" *ngIf="request.idType == PASSPORT">
+<mat-card>
+  <mat-card-header>
+  <mat-card-title style="color:green">Passport Details</mat-card-title>
+</mat-card-header>
+
+  <mat-card-content>
+    
+    <div class="col-md-6">
+        <p>passport no</p> 
+        
+        <p>expiry date</p> 
+
+        <p>issue date</p> 
+       
+        <p>status</p> 
+    </div>
+    <div class="col-md-6">
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+</div>  
